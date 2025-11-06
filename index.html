@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[Nama Software House] — Company Profile</title>
+
+  <!-- Tailwind Play CDN for quick prototype -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Simple meta & favicon placeholder -->
+  <meta name="description" content="Software House — building tailored digital solutions: web, mobile, ERP & integrations." />
+  <link rel="icon" href="data:," />
+
+  <style>
+    /* small extra styles for the demo */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    .accent { color: #0f3d91; } /* your primary brand color */
+    .btn-primary { background: #0f3d91; color: white; }
+    .btn-outline { border-color: rgba(15,61,145,.12); color: #0f3d91; }
+    /* testimonial carousel height */
+    #testimonial-track { transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+  </style>
+</head>
+<body class="antialiased text-slate-800 bg-gradient-to-b from-white via-slate-50 to-slate-100">
+
+  <!-- NAV / HEADER -->
+  <header class="sticky top-0 z-40 bg-white/60 backdrop-blur-sm border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-indigo-900 flex items-center justify-center text-white font-bold">SH</div>
+        <div>
+          <div class="font-semibold">[Nama Software House]</div>
+          <div class="text-xs text-slate-500">Membangun Solusi Digital yang Tepat untuk Bisnis Anda</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#services" class="hover:underline">Layanan</a>
+        <a href="#portfolio" class="hover:underline">Portofolio</a>
+        <a href="#workflow" class="hover:underline">Alur Kerja</a>
+        <a href="#contact" class="hover:underline">Kontak</a>
+        <a id="btn-demo" href="#demo" class="btn-primary px-4 py-2 rounded-md text-sm shadow">Lihat Demo</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="mobile-open" class="p-2 rounded-md border"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-50">
+    <div class="absolute right-0 w-64 h-full bg-white p-6 border-l">
+      <button id="mobile-close" class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <nav class="flex flex-col gap-3">
+        <a href="#services" class="py-2">Layanan</a>
+        <a href="#portfolio" class="py-2">Portofolio</a>
+        <a href="#workflow" class="py-2">Alur Kerja</a>
+        <a href="#contact" class="py-2">Kontak</a>
+        <a id="mobile-demo" href="#demo" class="mt-4 btn-primary px-4 py-2 rounded-md text-sm text-center">Lihat Demo</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO / FRONT OF BROCHURE -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Membangun Solusi Digital yang <span class="accent">Tepat</span> untuk Bisnis Anda
+        </h1>
+        <p class="mt-4 text-slate-600">Kami adalah <strong>software house profesional</strong> yang membantu bisnis tumbuh lewat website, aplikasi mobile, dan sistem ERP custom. Fokus kami: hasil yang bisa dioperasikan, mudah dipakai, dan mendatangkan nilai nyata.</p>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a id="cta-wa" href="#" class="btn-primary px-4 py-3 rounded-md shadow inline-flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.373 0 .001 5.373 0 12c0 2.12.556 4.1 1.614 5.84L0 24l6.42-1.68A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12 0-.97-.11-1.91-.5-2.8zM12 21.6a9.6 9.6 0 0 1-5.03-1.36l-.36-.22-3.8.99.98-3.71-.24-.38A9.6 9.6 0 1 1 21.6 12 9.6 9.6 0 0 1 12 21.6z"/><path d="M18.2 15.02l-2.08-.6a1 1 0 0 0-1.05.27l-1.13 1.1a7.7 7.7 0 0 1-3.63-3.2l1.3-1.17a.99.99 0 0 0 .29-1.06l-.6-2.02A1 1 0 0 0 9.6 6.7L7.84 7.74a4.12 4.12 0 0 0-1.67 1.9c-.44 1.4.22 2.92 1.62 4.85 1.4 1.93 3.72 3.77 6.9 3.77 1.5 0 2.24-.18 2.96-.45.7-.25 1.2-.92 1.23-1.76.03-.84-.56-1.53-1.52-1.77z"/></svg>
+            Konsultasi Gratis (WhatsApp)
+          </a>
+
+          <a href="#portfolio" class="btn-outline px-4 py-3 rounded-md inline-flex items-center gap-3 border border-slate-200">
+            Lihat Portofolio
+          </a>
+        </div>
+
+        <div class="mt-6 text-sm text-slate-500">
+          <strong>Keunggulan:</strong> Tim berpengalaman • Desain modern • Support & maintenance • Harga transparan
+        </div>
+
+        <!-- Quick feature badges -->
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <span class="px-3 py-1 rounded-md bg-white border text-xs">Web Development</span>
+          <span class="px-3 py-1 rounded-md bg-white border text-xs">Mobile App</span>
+          <span class="px-3 py-1 rounded-md bg-white border text-xs">Custom ERP</span>
+          <span class="px-3 py-1 rounded-md bg-white border text-xs">Integration</span>
+        </div>
+      </div>
+
+      <!-- Mockup / Visual Area -->
+      <div class="relative">
+        <div class="rounded-2xl shadow-2xl overflow-hidden">
+          <!-- Mockup: replace with actual screenshots -->
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e7b8219195d3b3cf7acbb2f5d9f3c8f" alt="dashboard mockup" class="w-full h-72 object-cover">
+        </div>
+
+        <!-- floating info card -->
+        <div class="absolute left-4 bottom-6 glass p-4 rounded-xl border shadow">
+          <div class="font-semibold">Aqiqahpro — Order & Laporan</div>
+          <div class="text-xs text-slate-600 mt-1">Manajemen order, inventory, dan laporan keuangan otomatis.</div>
+          <div class="text-xs text-slate-400 mt-2">Demo: scan QR atau klik Lihat Demo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (front side details) -->
+    <section id="services" class="mt-12 bg-white rounded-2xl p-6 border">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-semibold">Layanan Kami</h2>
+        <div class="text-sm text-slate-500">Solusi end-to-end mulai dari ide hingga support</div>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-4 gap-4">
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">Web Development</div>
+          <div class="text-sm text-slate-500 mt-2">Website & Web App modern, responsif, SEO-friendly.</div>
+        </div>
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">Mobile App</div>
+          <div class="text-sm text-slate-500 mt-2">Android & iOS — UI/UX yang ramah pengguna.</div>
+        </div>
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">Custom ERP</div>
+          <div class="text-sm text-slate-500 mt-2">Sistem terintegrasi: keuangan, inventory, produksi, laporan.</div>
+        </div>
+        <div class="p-4 rounded-lg border">
+          <div class="font-semibold">Konsultasi & Integrasi</div>
+          <div class="text-sm text-slate-500 mt-2">Automasi proses & integrasi pihak ketiga (payment, WA API, dll).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO / CALL TO ACTION -->
+    <section id="demo" class="mt-10 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-2xl font-bold">Scan QR atau Klik untuk Lihat Demo</h3>
+        <p class="mt-2 text-slate-600">Langsung coba demo Aqiqahpro — contoh sistem manajemen order & laporan. Klik tombol Demo atau scan QR dengan kamera ponsel.</p>
+
+        <div class="mt-6 flex items-center gap-6">
+          <div class="p-4 bg-white rounded-lg border w-40 text-center">
+            <img id="qr-sample" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://aqiqahpro.my.id" alt="QR Demo" class="mx-auto w-28 h-28">
+            <div class="text-xs text-slate-500 mt-2">Scan untuk demo</div>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <a href="https://aqiqahpro.my.id" target="_blank" class="btn-primary px-4 py-3 rounded-md inline-flex items-center gap-2">Buka Demo</a>
+            <button id="copy-wa" class="px-4 py-3 rounded-md border btn-outline inline-flex items-center gap-2">Copy / Buka WhatsApp</button>
+            <div class="text-sm text-slate-500">Atau kirim pesan ke: <strong id="wa-number">+62 812-3456-7890</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mini features / credibility -->
+      <div class="bg-white rounded-2xl p-6 border">
+        <h4 class="font-semibold">Kenapa Pilih Kami?</h4>
+        <ul class="mt-4 space-y-2 text-slate-600">
+          <li>✅ Tim berpengalaman membangun sistem bisnis nyata</li>
+          <li>✅ Desain modern & UX-friendly</li>
+          <li>✅ Support & maintenance pasca-live</li>
+          <li>✅ Harga transparan & timeline jelas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BACK SIDE: Portfolio & testimonials (acts like back of brochure) -->
+    <section id="portfolio" class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-6 border">
+        <h3 class="text-xl font-semibold">Portofolio Pilihan</h3>
+        <div class="mt-4 grid gap-4">
+          <div class="flex gap-4 items-center">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d466f60f6c4f8fa1c4ff0c7d2b4dda1" class="w-16 h-12 rounded-md object-cover" alt="">
+            <div>
+              <div class="font-semibold">Aqiqahpro</div>
+              <div class="text-sm text-slate-500">Sistem manajemen order, inventory, & laporan.</div>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-center">
+            <img src="https://images.unsplash.com/photo-1526378721132-8f8b8269b6ac?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=c9af70f3c2fa4b1d8f6d7f4e2be2b2f9" class="w-16 h-12 rounded-md object-cover" alt="">
+            <div>
+              <div class="font-semibold">BengkelPro</div>
+              <div class="text-sm text-slate-500">Aplikasi manajemen bengkel & inventori.</div>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-center">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b77d4ae2b6b4fb09f6ea6e7a6a7b2f0" class="w-16 h-12 rounded-md object-cover" alt="">
+            <div>
+              <div class="font-semibold">EduSys</div>
+              <div class="text-sm text-slate-500">Sistem informasi akademik digital untuk sekolah.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border">
+        <h3 class="text-xl font-semibold">Testimoni Klien</h3>
+
+        <!-- carousel -->
+        <div class="mt-6 overflow-hidden relative">
+          <div id="testimonial-track" class="flex space-x-4">
+            <div class="min-w-full p-4 bg-slate-50 rounded-lg border">
+              <p class="text-slate-700">“Sistemnya sangat membantu kami mengelola order & laporan harian.”</p>
+              <div class="mt-3 text-sm text-slate-500">— Aqiqah Ibrahim</div>
+            </div>
+
+            <div class="min-w-full p-4 bg-slate-50 rounded-lg border">
+              <p class="text-slate-700">“Cepat, komunikatif, dan hasilnya profesional banget!”</p>
+              <div class="mt-3 text-sm text-slate-500">— MIG Jakarta</div>
+            </div>
+
+            <div class="min-w-full p-4 bg-slate-50 rounded-lg border">
+              <p class="text-slate-700">“Developer profesional, prosesnya jelas dan mudah diikuti.”</p>
+              <div class="mt-3 text-sm text-slate-500">— Klien Retail</div>
+            </div>
+          </div>
+
+          <div class="absolute right-3 bottom-3 flex gap-2">
+            <button id="prev-test" class="p-2 rounded bg-white border">‹</button>
+            <button id="next-test" class="p-2 rounded bg-white border">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section id="workflow" class="mt-12 bg-white p-6 rounded-2xl border">
+      <h3 class="text-xl font-semibold">Alur Kerja Kami</h3>
+      <div class="mt-6 grid md:grid-cols-4 gap-4">
+        <div class="p-4 rounded-lg border text-center">
+          <div class="text-2xl font-bold">1</div>
+          <div class="mt-2 font-semibold">Analisis & Diskusi</div>
+          <div class="text-sm text-slate-500 mt-1">Pahami kebutuhan & tujuan bisnis.</div>
+        </div>
+        <div class="p-4 rounded-lg border text-center">
+          <div class="text-2xl font-bold">2</div>
+          <div class="mt-2 font-semibold">Desain & Pengembangan</div>
+          <div class="text-sm text-slate-500 mt-1">UI/UX, frontend & backend development.</div>
+        </div>
+        <div class="p-4 rounded-lg border text-center">
+          <div class="text-2xl font-bold">3</div>
+          <div class="mt-2 font-semibold">Testing & Implementasi</div>
+          <div class="text-sm text-slate-500 mt-1">QA, UAT, & deployment ke production.</div>
+        </div>
+        <div class="p-4 rounded-lg border text-center">
+          <div class="text-2xl font-bold">4</div>
+          <div class="mt-2 font-semibold">Support & Maintenance</div>
+          <div class="text-sm text-slate-500 mt-1">Perbaikan, update & monitoring.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contact" class="mt-12 bg-gradient-to-r from-slate-900 to-indigo-900 text-white rounded-2xl p-6">
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div>
+          <h4 class="text-2xl font-bold">Siap transformasi bisnis Anda?</h4>
+          <p class="mt-2 text-slate-200">Hubungi kami untuk konsultasi gratis & proposal — tanpa komitmen.</p>
+        </div>
+
+        <div>
+          <div class="font-semibold">Kontak</div>
+          <div class="mt-2 text-sm">WhatsApp: <span id="wa-number-footer">+62 812-3456-7890</span></div>
+          <div class="text-sm mt-1">Website: <a class="underline" href="https://aqiqahpro.my.id" target="_blank">aqiqahpro.my.id</a></div>
+          <div class="text-sm mt-1">Email: <a class="underline" href="mailto:hello@aqiqahpro.my.id">hello@aqiqahpro.my.id</a></div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="w-28 h-28 bg-white rounded p-2 flex items-center justify-center">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://aqiqahpro.my.id" alt="QR" class="w-full h-full object-contain">
+          </div>
+
+          <div>
+            <div class="text-sm">Atau klik tombol ini untuk chat:</div>
+            <a id="btn-wa-footer" href="#" class="mt-2 inline-block btn-primary px-5 py-3 rounded-md">Chat via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-slate-300 text-xs">© <span id="year"></span> [Nama Software House]. All rights reserved. | Alamat kantor (opsional)</div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER SMALL -->
+  <footer class="mt-10 mb-10 text-center text-sm text-slate-500">
+    Designed for pameran & brosur digital — ganti konten dengan data nyata.
+  </footer>
+
+  <!-- Simple JS for interactions -->
+  <script>
+    // Replace these with your real values
+    const WA_NUMBER = "+6281234567890"; // no spaces, use international format for wa.me
+    const WA_DISPLAY = "+62 812-3456-7890"; // how it appears in the UI
+    const DEMO_URL = "https://aqiqahpro.my.id";
+
+    // set numbers in UI
+    document.querySelectorAll('#wa-number, #wa-number-footer').forEach(el => el.textContent = WA_DISPLAY);
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const mobileOpen = document.getElementById('mobile-open');
+    const mobileClose = document.getElementById('mobile-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileOpen?.addEventListener('click', ()=> mobileMenu.classList.remove('hidden'));
+    mobileClose?.addEventListener('click', ()=> mobileMenu.classList.add('hidden'));
+
+    // CTA WhatsApp
+    const ctaWa = document.getElementById('cta-wa');
+    const btnWaFooter = document.getElementById('btn-wa-footer');
+    function openWhatsApp() {
+      const url = "https://wa.me/" + WA_NUMBER.replace(/\D/g,'') + "?text=" + encodeURIComponent("Halo, saya ingin konsultasi tentang pembuatan sistem / aplikasi.");
+      window.open(url, '_blank');
+    }
+    ctaWa?.addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(); });
+    btnWaFooter?.addEventListener('click', (e) => { e.preventDefault(); openWhatsApp(); });
+
+    document.getElementById('copy-wa')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard?.writeText(WA_DISPLAY).then(()=> {
+        alert("Nomor WhatsApp disalin: " + WA_DISPLAY + " — membuka chat...");
+        openWhatsApp();
+      }).catch(()=> {
+        openWhatsApp();
+      });
+    });
+
+    // demo button for top nav
+    document.getElementById('btn-demo')?.addEventListener('click', (e) => { /* smooth scroll handled by anchor */ });
+
+    // Testimonials carousel
+    const track = document.getElementById('testimonial-track');
+    const prev = document.getElementById('prev-test');
+    const next = document.getElementById('next-test');
+    let idx = 0;
+    const slides = track ? track.children.length : 0;
+    function updateCarousel() {
+      if(!track) return;
+      track.style.transform = `translateX(${ - idx * 100 }%)`;
+    }
+    prev?.addEventListener('click', ()=> { idx = (idx-1 + slides) % slides; updateCarousel(); });
+    next?.addEventListener('click', ()=> { idx = (idx+1) % slides; updateCarousel(); });
+    // auto rotate
+    setInterval(()=> { idx = (idx+1) % Math.max(slides,1); updateCarousel(); }, 7000);
+
+    // smooth scroll for all internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
